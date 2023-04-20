@@ -31,7 +31,7 @@ SID only
     :dev.irc.it 354 test 380I
     :dev.irc.it 315 test #ircd :End of WHO list.
 
-All information
+All information and token 123
 
     WHO #ircd %tcuihsnfdlaorSU,123
     :dev.irc.it 354 test 123 #ircd ~username 92.74.191.157 dslb-092-074-191-157.092.074.pools.vodafone-ip.de dev.irc.it test H 0 262 0 n/a 380D 380DAAAAB :realname
