@@ -10,27 +10,28 @@ The following additional fields have been added:
 ## Examples
 Username/ident, IP address, hostname, nick
 
-    WHO #ircd %uihn
-    :dev.irc.it 354 test ~username 92.74.191.157 dslb-092-074-191-157.092.074.pools.vodafone-ip.de test
-    :dev.irc.it 354 test ~patrick 54.38.153.88 de.ircnet.com patrick_
-    :dev.irc.it 354 test ~patrick 255.255.255.255 patrick.users.contempt.chat patrick
+    WHO #ircd %cihn
+    :dev.irc.it 354 test #ircd 92.74.191.157 dslb-092-074-191-157.092.074.pools.vodafone-ip.de test
+    :dev.irc.it 354 test #ircd 54.38.153.88 de.ircnet.com patrick_
+    :dev.irc.it 354 test #ircd 255.255.255.255 patrick.users.contempt.chat patrick
     :dev.irc.it 315 test #ircd :End of WHO list.
 
 Nick and UID
 
-    WHO #ircd %nU
-    :dev.irc.it 354 test test 380DAAAAB
-    :dev.irc.it 354 test patrick_ 380IAAADS
-    :dev.irc.it 354 test patrick 380IAAADL
+    WHO #ircd %cnU
+    :dev.irc.it 354 test #ircd test 380DAAAAB
+    :dev.irc.it 354 test #ircd patrick_ 380IAAADT
+    :dev.irc.it 354 test #ircd patrick 380IAAADL
     :dev.irc.it 315 test #ircd :End of WHO list.
 
 SID only
 
-    WHO #ircd %S
-    :dev.irc.it 354 test 380D
-    :dev.irc.it 354 test 380I
-    :dev.irc.it 354 test 380I
+    WHO #ircd %cS
+    :dev.irc.it 354 test #ircd 380D
+    :dev.irc.it 354 test #ircd 380I
+    :dev.irc.it 354 test #ircd 380I
     :dev.irc.it 315 test #ircd :End of WHO list.
+
 
 All information and token 123
 
@@ -42,7 +43,7 @@ All information and token 123
     
 Legacy: Former 'o' flag which filters for opers is still working with or without WHOX fields
 
-    who #ircd o%n
-    :dev.irc.it 354 test patrick
+    who #ircd o%cn 
+    :dev.irc.it 354 test #ircd patrick
     :dev.irc.it 315 test #ircd :End of WHO list.
 
