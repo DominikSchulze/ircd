@@ -1064,6 +1064,8 @@ typedef enum ServerChannels {
 #define WHO_FLAG_USER           0x0800
 #define WHO_FLAG_ACCOUNT        0x1000
 #define WHO_FLAG_OP_LEVEL       0x2000
+#define WHO_FLAG_SID            0x4000
+#define WHO_FLAG_UID            0x8000
 
 /*
  * base for channel IDs and UIDs

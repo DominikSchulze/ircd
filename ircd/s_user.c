@@ -1862,6 +1862,12 @@ static	void	who_one(aClient *sptr, aClient *acptr, aChannel *repchan,
         if (opts->flags & WHO_FLAG_OP_LEVEL) {
             len += snprintf_append(buf, BUFSIZE, len, " n/a");
         }
+        if (opts->flags & WHO_FLAG_SID) {
+            len += snprintf_append(buf, BUFSIZE, len, " %s", acptr->user->servp->sid);
+        }
+        if (opts->flags & WHO_FLAG_UID) {
+            len += snprintf_append(buf, BUFSIZE, len, " %s", acptr->user->uid);
+        }
         if (opts->flags & WHO_FLAG_INFO) {
             len += snprintf_append(buf, BUFSIZE, len, " :%s", acptr->info);
         }
@@ -2055,6 +2061,12 @@ void parse_who_arg(char *arg, struct who_opts *opts)
                     break;
                 case 'o' :
                     opts->flags |= WHO_FLAG_OP_LEVEL;
+                    break;
+                case 'S' :
+                    opts->flags |= WHO_FLAG_SID;
+                    break;
+                case 'U' :
+                    opts->flags |= WHO_FLAG_UID;
                     break;
                 case 'r' :
                     opts->flags |= WHO_FLAG_INFO;
