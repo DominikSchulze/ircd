@@ -2024,8 +2024,9 @@ void parse_who_arg(char *arg, struct who_opts *opts)
     // IRCv3 WHOX
     if((s = strchr(arg, '%')) != NULL) {
         char buf[BUFSIZE];
+        s++;
 
-        for (s = arg; *s; s++) {
+        for (; *s; s++) {
             switch (*s) {
                 case 't' :
                     opts->flags |= WHO_FLAG_TOKEN;
