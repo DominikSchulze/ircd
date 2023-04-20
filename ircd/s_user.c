@@ -1848,7 +1848,8 @@ static	void	who_one(aClient *sptr, aClient *acptr, aChannel *repchan,
             len += snprintf_append(buf, BUFSIZE, len, " %d", acptr->hopcount);
         }
         if (opts->flags & WHO_FLAG_IDLE) {
-            len += snprintf_append(buf, BUFSIZE, len, " %ld", (long)(timeofday - acptr->user->last));
+            len += snprintf_append(buf, BUFSIZE, len, " %ld",
+                                   MyClient(acptr) ? (long)(timeofday - acptr->user->last): 0);
         }
         if (opts->flags & WHO_FLAG_ACCOUNT) {
             if (IsSASLAuthed(acptr) && acptr->user->sasl_user != NULL)
