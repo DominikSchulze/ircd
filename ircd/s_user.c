@@ -1817,7 +1817,7 @@ static	void	who_one(aClient *sptr, aClient *acptr, aChannel *repchan,
 	status[i] = '\0';
 
 	if((opts->flags & ~WHO_FLAG_OPERS_ONLY) != 0) {
-        char buf[BUFSIZE], *token = "0";
+        char buf[BUFSIZE];
         int len = snprintf(buf, BUFSIZE, replies[RPL_WHOSPCRPL], ME, BadTo(sptr->name));
 
         if (opts->flags & WHO_FLAG_TOKEN) {
@@ -2084,6 +2084,9 @@ int	m_who(aClient *cptr, aClient *sptr, int parc, char *parv[])
 	int penalty = 0;
     char *p, *mask, *channame;
     struct who_opts opts;
+
+    opts.flags = 0;
+    opts.token = NULL;
 
 	if (parc < 2)
 	{
